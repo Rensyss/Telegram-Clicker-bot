@@ -5,7 +5,7 @@ import flet as ft
 
 #настройка шрифта, названия, цвет.
 async def main(page: ft.Page) -> None:
-    page.title = 'Peach Clicker 🍑'
+    page.title = 'TONZZ Clicker '
     page.theme_mode = ft.ThemeMode.DARK
     page.bgcolor = '#141221'
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
@@ -15,7 +15,7 @@ async def main(page: ft.Page) -> None:
 
     score = ft.Text(value='0', size=100, data=0)
     score_counter = ft.Text(size=50, animate_opacity=ft.Animation(duration=600, curve=ft.AnimationCurve.BOUNCE_IN))
-    image = ft.Image(src='/image/apple.png', fit=ft.ImageFit.CONTAIN, animate_scale=ft.Animation(duration=600, curve=ft.AnimationCurve.EASE))
+    image = ft.Image(src='/image/TONZZ.png', fit=ft.ImageFit.CONTAIN, animate_scale=ft.Animation(duration=600, curve=ft.AnimationCurve.EASE))
     progress_bar = ft.ProgressBar(value=0, width=page.width - 100, bar_height=20, color='#ff8b1f', bgcolor='#bf6524')
 
     async def score_up(event: ft.ContainerTapEvent) -> None:
@@ -24,7 +24,7 @@ async def main(page: ft.Page) -> None:
 
         image.scale = 0.95
 
-        # Генерируем случайные координаты для позиционирования текста score_counter можно сделать под себя 🍑
+        # Генерируем случайные координаты для позиционирования текста score_counter можно сделать под себя 
         score_counter.right = random.randint(event.control.right - 100 if event.control.right else page.width - 100, event.control.right if event.control.right else page.width)
         score_counter.left = random.randint(event.control.left if event.control.left else 0, event.control.left + 100 if event.control.left else 100)
         score_counter.top = random.randint(event.control.top - 50 if event.control.top else 0, event.control.top + 50 if event.control.top else 50)
@@ -38,7 +38,7 @@ async def main(page: ft.Page) -> None:
             progress_bar.value = 0 
 
         score_counter.opacity = 100
-        score_counter.value = f'+1 🍑' 
+        score_counter.value = f'+1 TON' 
 
         page.update()
         await asyncio.sleep(0.1)
